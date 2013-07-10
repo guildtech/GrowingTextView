@@ -333,13 +333,13 @@
     
     CGRect internalTextViewFrame = self.frame;
     internalTextViewFrame.size.height = newSizeH; // + padding
-    self.frame = internalTextViewFrame;
+//    self.frame = internalTextViewFrame;
     
     internalTextViewFrame.origin.y = contentInset.top - contentInset.bottom;
     internalTextViewFrame.origin.x = contentInset.left;
     internalTextViewFrame.size.width = internalTextView.contentSize.width;
     
-    internalTextView.frame = internalTextViewFrame;
+//    internalTextView.frame = internalTextViewFrame;
 }
 
 -(void)growDidStop

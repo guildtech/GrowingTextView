@@ -51,8 +51,8 @@
 		//initiated by user...
         
         UIEdgeInsets insets = self.contentInset;
-        insets.bottom = 0;
-        insets.top = 0;
+//        insets.bottom = 0;
+//        insets.top = 0;
         self.contentInset = insets;
         
 	} else {
@@ -60,8 +60,8 @@
 		float bottomOffset = (self.contentSize.height - self.frame.size.height + self.contentInset.bottom);
 		if(s.y < bottomOffset && self.scrollEnabled){            
             UIEdgeInsets insets = self.contentInset;
-            insets.bottom = 8;
-            insets.top = 0;
+//            insets.bottom = 8;
+//            insets.top = 0;
             self.contentInset = insets;            
         }
 	}
@@ -73,8 +73,8 @@
 {
 	UIEdgeInsets insets = s;
 	
-	if(s.bottom>8) insets.bottom = 0;
-	insets.top = 0;
+//	if(s.bottom>8) insets.bottom = 0;
+//	insets.top = 0;
 
 	[super setContentInset:insets];
 }
@@ -85,8 +85,8 @@
     if(self.contentSize.height > contentSize.height)
     {
         UIEdgeInsets insets = self.contentInset;
-        insets.bottom = 0;
-        insets.top = 0;
+//        insets.bottom = 0;
+//        insets.top = 0;
         self.contentInset = insets;
     }
     
