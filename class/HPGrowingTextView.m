@@ -151,7 +151,7 @@
     
     internalTextView.text = newText;
     
-    maxHeight = internalTextView.contentSize.height;
+    maxHeight = internalTextView.contentHeight;
     
     internalTextView.text = saveText;
     internalTextView.hidden = NO;
@@ -188,8 +188,8 @@
     
     internalTextView.text = newText;
     
-    minHeight = internalTextView.contentSize.height;
-    
+    minHeight = internalTextView.contentHeight;
+
     internalTextView.text = saveText;
     internalTextView.hidden = NO;
     internalTextView.delegate = self;
@@ -238,8 +238,8 @@
 - (void)refreshHeight
 {
 	//size of content, so we can set the frame of self
-	NSInteger newSizeH = internalTextView.contentSize.height;
-	if(newSizeH < minHeight || !internalTextView.hasText) newSizeH = minHeight; //not smalles than minHeight
+	NSInteger newSizeH = internalTextView.contentHeight;
+	if(newSizeH < minHeight || !internalTextView.hasText) newSizeH = minHeight; //not smaller than minHeight
   if (internalTextView.frame.size.height > maxHeight) newSizeH = maxHeight; // not taller than maxHeight
 
 	if (internalTextView.frame.size.height != newSizeH)
@@ -330,16 +330,6 @@
     if ([delegate respondsToSelector:@selector(growingTextView:willChangeHeight:)]) {
         [delegate growingTextView:self willChangeHeight:newSizeH];
     }
-    
-    CGRect internalTextViewFrame = self.frame;
-    internalTextViewFrame.size.height = newSizeH; // + padding
-//    self.frame = internalTextViewFrame;
-    
-    internalTextViewFrame.origin.y = contentInset.top - contentInset.bottom;
-    internalTextViewFrame.origin.x = contentInset.left;
-    internalTextViewFrame.size.width = internalTextView.contentSize.width;
-    
-//    internalTextView.frame = internalTextViewFrame;
 }
 
 -(void)growDidStop

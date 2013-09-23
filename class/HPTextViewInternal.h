@@ -34,4 +34,6 @@
 @property (nonatomic, strong) UIColor *placeholderColor;
 @property (nonatomic) BOOL displayPlaceHolder;
 
+- (CGFloat)contentHeight;
+
 @end
