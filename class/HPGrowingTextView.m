@@ -239,8 +239,8 @@
 {
 	//size of content, so we can set the frame of self
 	NSInteger newSizeH = internalTextView.contentHeight;
-	if(newSizeH < minHeight || !internalTextView.hasText) newSizeH = minHeight; //not smaller than minHeight
-  if (internalTextView.frame.size.height > maxHeight) newSizeH = maxHeight; // not taller than maxHeight
+	if (newSizeH < minHeight || !internalTextView.hasText) newSizeH = minHeight; //not smaller than minHeight
+  if (newSizeH > maxHeight) newSizeH = maxHeight; // not taller than maxHeight
 
 	if (internalTextView.frame.size.height != newSizeH)
 	{
